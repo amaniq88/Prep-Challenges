@@ -98,23 +98,28 @@ const stringReverse = (str) => {
 // };
 //
 // ------------------------
-
+var stat = "";
 const statistics = (obj) => {
-    let countedNames = obj.reduce(function (allNames , name ) {
-    name = name.votes_To;
-    if (name in allNames) {
-       allNames[name]++
-      }
-      else {
-    
-        allNames[name] = 1
-      }
-      return allNames[name]
-    
-    
-    } , {}); 
-    
-    }
+let countedNames = obj.reduce(function (allNames , name ) {
+name = name.votes_To;
+const x = allNames
+if (name in allNames) {
+   allNames[name]++
+ stat = allNames ; 
+  }
+  else {
+
+    allNames[name] = 1
+       //   console.log(allNames);
+
+  }
+
+  return allNames
+
+}, {})
+
+return a;
+}
 
 
 
