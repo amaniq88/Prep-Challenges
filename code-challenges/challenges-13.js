@@ -118,7 +118,7 @@ if (name in allNames) {
 
 }, {})
 
-return a;
+return stat;
 }
 
 
