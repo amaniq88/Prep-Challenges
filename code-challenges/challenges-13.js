@@ -57,8 +57,26 @@ const objectCounter = (obj) => {
 // ------------------------
 
 const stringReverse = (str) => {
-    return str.split("").reduce((rev, char)=> char + rev, ''); 
+  const reversArray = [];
+  let words = str.split(" ")
+    let countedNames = words.reduce(function (allNames , name ) {
+      reversArray.unshift(name);
+if (name in allNames) {
+   allNames[name]++
+  }
+  else {
 
+    allNames[name] = 1
+       //   console.log(allNames);
+
+  }
+
+  return allNames
+
+}, {})
+
+
+return reversArray.join(" ");
 }
 
 // 3) ---------------------
@@ -118,7 +136,7 @@ if (name in allNames) {
 
 }, {})
 
-return a;
+return stat;
 }
 
 
