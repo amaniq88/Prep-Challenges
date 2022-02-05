@@ -45,7 +45,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function howManyGames(p, d, m, s) {\n    let i = 0;\n    while(s >= p){\n        s= s-p;\n      if ( p-d >= m)\n      {  p=p-d;\n      } else \n      {\n      p = m ;\n      }\n        i = i+1;\n    }\n    return i;\n    }"
             ],
             "outputs": []
         },
