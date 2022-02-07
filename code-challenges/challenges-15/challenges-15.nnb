@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function squares(a, b) {\n    return (Math.floor(Math.sqrt(b)) -  Math.ceil(Math.sqrt(a)) + 1);\n \n }"
             ],
             "outputs": []
         }
