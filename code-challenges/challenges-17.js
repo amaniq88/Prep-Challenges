@@ -14,13 +14,23 @@
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
 
+
+let s = 0;
+let arr = [];
 const recursionPattern = (int1, int2) => {
-    if(int1 >= 1 )
-   return recursionPattern((int1 - int2), int2);
-    
-    else 
-  return recursionPattern((int1 + int2) , int2);
+  arr.push(int1);    
+  if (int1 === arr[0] && (arr.length !== 1)  ){
+  return arr;
+  } else if ( int1 >= 1  && s == 0){
+   int1 = int1 - int2 ;
+       return recursionPattern(int1 , int2);
+ }else{
+    s = 1;
+    return recursionPattern(int1 + int2 , int2);
+
+  } 
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -38,7 +48,7 @@ const recursionPattern = (int1, int2) => {
 // 
 
 const filterLinks = (str) => {
-    const matches = str.match(www[^ ][a-z]+\.+com)[1];
+    const matches = str.match("www[^ ][a-z]+\.+com)[1]");
     return matches;
 }
 // -------------------------------------------------------------------------------------------------------
