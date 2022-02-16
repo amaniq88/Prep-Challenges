@@ -14,13 +14,28 @@
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
 
+
 const recursionPattern = (int1, int2) => {
-    if(int1 >= 1 )
-   return recursionPattern((int1 - int2), int2);
-    
-    else 
-  return recursionPattern((int1 + int2) , int2);
-}
+    let recursionArray = [];
+     let s = 0;
+     return recursionPatternHelper(int1, int2 , recursionArray , s);
+     
+  }
+  
+  
+  const recursionPatternHelper = (int1, int2, arr, s) => {
+     arr.push(int1);  
+      
+    if (int1 === arr[0] && (arr.length !== 1)  ){
+    return arr;
+    } else if ( int1 >= 1  && s == 0){
+         return recursionPatternHelper(int1 - int2 , int2 , arr , s );
+   }else{
+      s = 1;
+      return recursionPatternHelper(int1 + int2 , int2 , arr , s);
+  
+    } 
+  }
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -38,8 +53,18 @@ const recursionPattern = (int1, int2) => {
 // 
 
 const filterLinks = (str) => {
-    const matches = str.match(www[^ ][a-z]+\.+com)[1];
-    return matches;
+    const regex = /www[^][a-z]+\.+com/g
+    const regex2 = /www[^][a-z]+\.+org/g
+    const val1 = regex.test(str);
+    const val2 = regex2.test(str);
+    var reusult = [];
+    if (val1 == true)
+     reusult = str.match(regex);
+    else if ( val2 == true)
+        reusult = str.match(regex2);
+
+
+ return reusult[0];
 }
 // -------------------------------------------------------------------------------------------------------
 
